@@ -1,105 +1,336 @@
-<E h
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HALYA soaps | Modern Luxury Apothecary</title>
-<meta name="description" content="HALYA soaps — modern luxury apothecary bath and body care.">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>HALYA soaps | Modern Luxury Apothecary</title>
+  <meta name="description" content="HALYA soaps — modern luxury apothecary bath and body care.">
+
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
 <header class="site-header">
-  <a class="logo" href="#home">HALYA <span>SOAPS</span></a>
-  <button class="menu" aria-label="Open menu">☰</button>
+  <a class="logo" href="#home">
+    HALYA <span>SOAPS</span>
+  </a>
+
+  <button class="menu" aria-label="Open menu" aria-expanded="false">
+    ☰
+  </button>
+
   <nav>
     <a href="#home">Home</a>
     <a href="#shop">Shop</a>
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
-    <button class="cart-button" id="cartBtn">Cart (<span id="cartCount">0</span>)</button>
+
+    <button class="cart-button" id="cartBtn">
+      Cart (<span id="cartCount">0</span>)
+    </button>
   </nav>
 </header>
 
 <main>
+
+<!-- HERO -->
+
 <section id="home" class="hero">
   <div class="hero-inner">
+
     <p class="eyebrow">MODERN LUXURY APOTHECARY</p>
-    <h1>Everyday cleansing,<br><em>elevated.</em></h1>
-    <p class="hero-copy">Handcrafted bath and body essentials created to make your daily ritual feel beautifully indulgent.</p>
-    <a class="button" href="#shop">Shop the collection</a>
+
+    <h1>
+      Everyday cleansing,<br>
+      <em>elevated.</em>
+    </h1>
+
+    <p class="hero-copy">
+      Handcrafted bath and body essentials created to make
+      your daily ritual feel beautifully indulgent.
+    </p>
+
+    <a class="button" href="#shop">
+      Shop the collection
+    </a>
+
   </div>
 </section>
+
+
+<!-- INTRO -->
 
 <section class="intro">
+
   <p class="eyebrow">THE HALYA PHILOSOPHY</p>
-  <h2>Simple rituals.<br>Beautifully made.</h2>
-  <p>Thoughtfully crafted cleansing and body-care products with a refined apothecary aesthetic.</p>
+
+  <h2>
+    Simple rituals.<br>
+    Beautifully made.
+  </h2>
+
+  <p>
+    Thoughtfully crafted cleansing and body-care products
+    with a refined apothecary aesthetic.
+  </p>
+
 </section>
+
+
+<!-- SHOP -->
 
 <section id="shop" class="shop">
+
   <div class="section-heading">
+
     <p class="eyebrow">THE COLLECTION</p>
+
     <h2>Shop HALYA</h2>
+
   </div>
+
+
   <div class="products">
+
+    <!-- PRODUCT 1 -->
+
     <article class="product">
-      <div class="product-image">BAR SOAP</div>
-      <div class="product-info"><h3>Signature Bar Soap</h3><p>Handcrafted cleansing bar.</p><strong>$12.00</strong><button onclick="addToCart('Signature Bar Soap',12)">Add to cart</button></div>
+
+      <div class="product-image">
+        <span>BAR SOAP</span>
+      </div>
+
+      <div class="product-info">
+
+        <p class="product-category">CLEANSING</p>
+
+        <h3>Signature Bar Soap</h3>
+
+        <p>
+          Handcrafted cleansing bar.
+        </p>
+
+        <div class="product-bottom">
+
+          <strong>$12.00</strong>
+
+          <button
+            class="add-to-cart"
+            onclick="addToCart('Signature Bar Soap', 12)">
+            Add to cart
+          </button>
+
+        </div>
+
+      </div>
+
     </article>
+
+
+    <!-- PRODUCT 2 -->
+
     <article class="product">
-      <div class="product-image">SCRUB</div>
-      <div class="product-info"><h3>Foaming Salt Scrub</h3><p>Luxurious exfoliating body polish.</p><strong>$18.00</strong><button onclick="addToCart('Foaming Salt Scrub',18)">Add to cart</button></div>
+
+      <div class="product-image">
+        <span>SCRUB</span>
+      </div>
+
+      <div class="product-info">
+
+        <p class="product-category">EXFOLIATION</p>
+
+        <h3>Foaming Salt Scrub</h3>
+
+        <p>
+          Luxurious exfoliating body polish.
+        </p>
+
+        <div class="product-bottom">
+
+          <strong>$18.00</strong>
+
+          <button
+            class="add-to-cart"
+            onclick="addToCart('Foaming Salt Scrub', 18)">
+            Add to cart
+          </button>
+
+        </div>
+
+      </div>
+
     </article>
+
+
+    <!-- PRODUCT 3 -->
+
     <article class="product">
-      <div class="product-image">BATH</div>
-      <div class="product-info"><h3>Luxury Bath Bomb</h3><p>Aromatic bath-time ritual.</p><strong>$10.00</strong><button onclick="addToCart('Luxury Bath Bomb',10)">Add to cart</button></div>
+
+      <div class="product-image">
+        <span>BATH</span>
+      </div>
+
+      <div class="product-info">
+
+        <p class="product-category">BATH RITUAL</p>
+
+        <h3>Luxury Bath Bomb</h3>
+
+        <p>
+          Aromatic bath-time ritual.
+        </p>
+
+        <div class="product-bottom">
+
+          <strong>$10.00</strong>
+
+          <button
+            class="add-to-cart"
+            onclick="addToCart('Luxury Bath Bomb', 10)">
+            Add to cart
+          </button>
+
+        </div>
+
+      </div>
+
     </article>
+
   </div>
+
 </section>
+
+
+<!-- ABOUT -->
 
 <section id="about" class="about">
+
   <div>
+
     <p class="eyebrow">ABOUT HALYA</p>
-    <h2>Luxury belongs<br>in the everyday.</h2>
+
+    <h2>
+      Luxury belongs<br>
+      in the everyday.
+    </h2>
+
   </div>
-  <p>HALYA soaps is a modern luxury apothecary created around one simple idea: staying clean can be a beautiful experience. Our collection is designed to bring intention, indulgence, and elegance to everyday body care.</p>
+
+  <p>
+    HALYA soaps is a modern luxury apothecary created around
+    one simple idea: staying clean can be a beautiful experience.
+    Our collection is designed to bring intention, indulgence,
+    and elegance to everyday body care.
+  </p>
+
 </section>
+
+
+<!-- NEWSLETTER -->
 
 <section class="newsletter">
+
   <p class="eyebrow">JOIN THE HALYA LIST</p>
-  <h2>New launches & rituals, delivered.</h2>
+
+  <h2>
+    New launches & rituals, delivered.
+  </h2>
+
   <form onsubmit="subscribe(event)">
-    <input type="email" id="email" placeholder="Your email address" required>
-    <button class="button" type="submit">Subscribe</button>
+
+    <input
+      type="email"
+      id="email"
+      placeholder="Your email address"
+      required
+    >
+
+    <button class="button" type="submit">
+      Subscribe
+    </button>
+
   </form>
+
   <p id="subscribeMsg" class="small"></p>
+
 </section>
+
+
+<!-- CONTACT -->
 
 <section id="contact" class="contact">
+
   <p class="eyebrow">CONTACT</p>
+
   <h2>Let's connect.</h2>
-  <p>For product questions, wholesale inquiries, or collaborations:</p>
-  <a href="mailto:hello@halyasoaps.com">hello@halyasoaps.com</a>
+
+  <p>
+    For product questions, wholesale inquiries,
+    or collaborations:
+  </p>
+
+  <a href="mailto:hello@halyasoaps.com">
+    hello@halyasoaps.com
+  </a>
+
 </section>
+
 </main>
 
+
+<!-- FOOTER -->
+
 <footer>
-  <div class="logo">HALYA <span>SOAPS</span></div>
-  <p>© 2026 HALYA soaps. All rights reserved.</p>
+
+  <div class="logo">
+    HALYA <span>SOAPS</span>
+  </div>
+
+  <p>
+    © 2026 HALYA soaps. All rights reserved.
+  </p>
+
 </footer>
 
+
+<!-- CART MODAL -->
+
 <div class="cart-modal" id="cartModal">
+
   <div class="cart-panel">
-    <button class="close" id="closeCart">×</button>
+
+    <button class="close" id="closeCart">
+      ×
+    </button>
+
     <p class="eyebrow">YOUR CART</p>
+
     <h2>HALYA</h2>
-    <div id="cartItems"><p>Your cart is empty.</p></div>
-    <div class="cart-total">Total: $<span id="cartTotal">0.00</span></div>
-    <button class="button checkout" onclick="checkout()">Checkout</button>
-    <p class="small">Checkout is a demo until a payment provider is connected.</p>
+
+    <div id="cartItems">
+      <p>Your cart is empty.</p>
+    </div>
+
+    <div class="cart-total">
+      Total: $<span id="cartTotal">0.00</span>
+    </div>
+
+    <button class="button checkout" onclick="checkout()">
+      Checkout
+    </button>
+
+    <p class="small">
+      Checkout is a demo until a payment provider is connected.
+    </p>
+
   </div>
+
 </div>
 
+
 <script src="script.js"></script>
+
 </body>
 </html>
