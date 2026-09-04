@@ -238,3 +238,28 @@ updateCart();
     padding: 25px;
   }
 }
+/* =========================================
+   HALYA — BLACK LUXURY LINKS
+   ========================================= */
+
+a,
+a:visited {
+  color: #171717;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #77716a;
+}
+
+/* Cart button */
+#cartBtn {
+  background: #171717;
+  color: #fffdf9;
+  border: 1px solid #171717;
+}
+
+#cartBtn:hover {
+  background: transparent;
+  color: #171717;
+}
