@@ -633,3 +633,36 @@ footer p {
   }
 
 }
+/* FORCE HALYA CART TO BLACK */
+
+.cart-button,
+.cart-button:visited,
+#cartBtn,
+#cartBtn:visited {
+  background: #171717 !important;
+  color: #fffdf9 !important;
+  border: 1px solid #171717 !important;
+}
+
+.cart-button:hover,
+#cartBtn:hover {
+  background: transparent !important;
+  color: #171717 !important;
+}
+
+/* Cart drawer text */
+.cart-modal,
+.cart-panel,
+.cart-panel h2,
+.cart-panel strong,
+.cart-panel p,
+.cart-total {
+  color: #171717;
+}
+
+/* Cart quantity buttons */
+.cart-item-actions button {
+  background: #171717;
+  color: #fffdf9;
+  border: 1px solid #171717;
+}
