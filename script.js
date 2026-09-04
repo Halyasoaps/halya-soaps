@@ -1,16 +1,190 @@
-let cart = JSON.parse(localStorage.getItem('halyaCart') || '[]');
-function updateCart(){
-  document.getElementById('cartCount').textContent=cart.reduce((s,i)=>s+i.qty,0);
-  const box=document.getElementById('cartItems');
-  if(!cart.length){box.innerHTML='<p>Your cart is empty.</p>';document.getElementById('cartTotal').textContent='0.00';return;}
-  box.innerHTML=cart.map((i,n)=>`<div class="cart-row"><span>${i.name} × ${i.qty}</span><span>$${(i.price*i.qty).toFixed(2)} <button onclick="removeItem(${n})">×</button></span></div>`).join('');
-  document.getElementById('cartTotal').textContent=cart.reduce((s,i)=>s+i.price*i.qty,0).toFixed(2);
-  localStorage.setItem('halyaCart',JSON.stringify(cart));
+// =========================================
+// HALYA SOAPS — CART & SITE INTERACTIONS
+// =========================================
+
+let cart = [];
+
+// =========================================
+// CART
+// =========================================
+
+function addToCart(name, price) {
+  const existingItem = cart.find(item => item.name === name);
+
+  if (existingItem) {
+    existingItem.quantity += 1;
+  } else {
+    cart.push({
+      name: name,
+      price: price,
+      quantity: 1
+    });
+  }
+
+  updateCart();
+
+  // Open cart after adding
+  const cartModal = document.getElementById("cartModal");
+
+  if (cartModal) {
+    cartModal.classList.add("active");
+  }
 }
-function addToCart(name,price){let i=cart.find(x=>x.name===name);i?i.qty++:cart.push({name,price,qty:1});updateCart();document.getElementById('cartModal').classList.add('open')}
-function removeItem(n){cart.splice(n,1);updateCart()}
-document.getElementById('cartBtn').onclick=()=>document.getElementById('cartModal').classList.add('open');
-document.getElementById('closeCart').onclick=()=>document.getElementById('cartModal').classList.remove('open');
-function checkout(){alert('Demo checkout: connect Stripe, Square, Shopify, or another payment provider before accepting orders.')}
-function subscribe(e){e.preventDefault();document.getElementById('subscribeMsg').textContent='Thank you — you’re on the HALYA list.';e.target.reset()}
+
+function updateCart() {
+  const cartItems = document.getElementById("cartItems");
+  const cartCount = document.getElementById("cartCount");
+  const cartTotal = document.getElementById("cartTotal");
+
+  if (!cartItems || !cartCount || !cartTotal) return;
+
+  // Update item count
+  const totalItems = cart.reduce(
+    (total, item) => total + item.quantity,
+    0
+  );
+
+  cartCount.textContent = totalItems;
+
+  // Empty cart
+  if (cart.length === 0) {
+    cartItems.innerHTML = "<p>Your cart is empty.</p>";
+    cartTotal.textContent = "0.00";
+    return;
+  }
+
+  // Display cart items
+  cartItems.innerHTML = cart.map((item, index) => `
+    <div class="cart-item">
+
+      <div>
+        <strong>${item.name}</strong>
+        <p>$${item.price.toFixed(2)} × ${item.quantity}</p>
+      </div>
+
+      <div class="cart-item-actions">
+        <button onclick="changeQuantity(${index}, -1)">−</button>
+        <span>${item.quantity}</span>
+        <button onclick="changeQuantity(${index}, 1)">+</button>
+        <button onclick="removeFromCart(${index})">×</button>
+      </div>
+
+    </div>
+  `).join("");
+
+  // Calculate total
+  const total = cart.reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0
+  );
+
+  cartTotal.textContent = total.toFixed(2);
+}
+
+function changeQuantity(index, amount) {
+  if (!cart[index]) return;
+
+  cart[index].quantity += amount;
+
+  if (cart[index].quantity <= 0) {
+    cart.splice(index, 1);
+  }
+
+  updateCart();
+}
+
+function removeFromCart(index) {
+  cart.splice(index, 1);
+  updateCart();
+}
+
+// =========================================
+// CART MODAL
+// =========================================
+
+const cartBtn = document.getElementById("cartBtn");
+const cartModal = document.getElementById("cartModal");
+const closeCart = document.getElementById("closeCart");
+
+if (cartBtn && cartModal) {
+  cartBtn.addEventListener("click", () => {
+    cartModal.classList.add("active");
+  });
+}
+
+if (closeCart && cartModal) {
+  closeCart.addEventListener("click", () => {
+    cartModal.classList.remove("active");
+  });
+}
+
+// Close when clicking outside cart
+if (cartModal) {
+  cartModal.addEventListener("click", (event) => {
+    if (event.target === cartModal) {
+      cartModal.classList.remove("active");
+    }
+  });
+}
+
+// =========================================
+// CHECKOUT
+// =========================================
+
+function checkout() {
+  if (cart.length === 0) {
+    alert("Your cart is empty.");
+    return;
+  }
+
+  alert(
+    "Thank you for shopping with HALYA soaps.\n\n" +
+    "Checkout is coming soon."
+  );
+}
+
+// =========================================
+// NEWSLETTER
+// =========================================
+
+function subscribe(event) {
+  event.preventDefault();
+
+  const emailInput = document.getElementById("email");
+  const subscribeMsg = document.getElementById("subscribeMsg");
+
+  if (!emailInput || !subscribeMsg) return;
+
+  const email = emailInput.value.trim();
+
+  if (email === "") return;
+
+  subscribeMsg.textContent =
+    "Thank you for joining the HALYA list.";
+
+  emailInput.value = "";
+}
+
+// =========================================
+// MOBILE MENU
+// =========================================
+
+const menuButton = document.querySelector(".menu");
+const navigation = document.querySelector("nav");
+
+if (menuButton && navigation) {
+  menuButton.addEventListener("click", () => {
+    const isOpen = navigation.classList.toggle("active");
+
+    menuButton.setAttribute(
+      "aria-expanded",
+      isOpen
+    );
+  });
+}
+
+// =========================================
+// INITIALIZE
+// =========================================
+
 updateCart();
