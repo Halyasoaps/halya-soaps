@@ -122,14 +122,6 @@ if (closeCart && cartModal) {
 if (cartModal) {
   cartModal.addEventListener("click", (event) => {
     if (event.target === cartModal) {
-      cartModal.classList.remove("active");
-    }
-  });
-}
-
-// =========================================
-// CHECKOUT
-// =========================================
 
 // =========================================
 // CHECKOUT
