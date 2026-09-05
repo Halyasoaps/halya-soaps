@@ -131,18 +131,18 @@ if (cartModal) {
 // CHECKOUT
 // =========================================
 
+// =========================================
+// CHECKOUT
+// =========================================
 function checkout() {
   if (cart.length === 0) {
     alert("Your cart is empty.");
     return;
   }
-
-  alert(
-    "Thank you for shopping with HALYA soaps.\n\n" +
-    "Checkout is coming soon."
-  );
+  // Open Stripe Checkout
+  window.location.href =
+    "https://buy.stripe.com/aFacN7b7w6KIdKB6f01RC00";
 }
-
 // =========================================
 // NEWSLETTER
 // =========================================
