@@ -317,12 +317,18 @@
       Total: $<span id="cartTotal">0.00</span>
     </div>
 
-    <button class="button checkout" onclick="checkout()">
-      Checkout
-    </button>
-
-    <p class="small">
-      Checkout is a demo until a payment provider is connected.
+    // =========================================
+// CHECKOUT
+// =========================================
+function checkout() {
+  if (cart.length === 0) {
+    alert("Your cart is empty.");
+    return;
+  }
+  window.location.assign(
+    "https://buy.stripe.com/aFacN7b7w6KIdKB6f01RC00"
+  );
+}
     </p>
 
   </div>
