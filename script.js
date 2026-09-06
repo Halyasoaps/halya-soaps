@@ -122,19 +122,26 @@ if (closeCart && cartModal) {
 if (cartModal) {
   cartModal.addEventListener("click", (event) => {
     if (event.target === cartModal) {
+      cartModal.classList.remove("active");
+    }
+  });
+}
 
 // =========================================
 // CHECKOUT
 // =========================================
+
 function checkout() {
   if (cart.length === 0) {
     alert("Your cart is empty.");
     return;
   }
+
   // Open Stripe Checkout
   window.location.href =
     "https://buy.stripe.com/aFacN7b7w6KIdKB6f01RC00";
 }
+
 // =========================================
 // NEWSLETTER
 // =========================================
@@ -179,4 +186,4 @@ if (menuButton && navigation) {
 // INITIALIZE
 // =========================================
 
-updateCart();
+updateCart(); 
