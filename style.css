@@ -666,3 +666,116 @@ footer p {
   color: #fffdf9;
   border: 1px solid #171717;
 }
+/* =========================================
+   HALYA SOAPS — LUXURY SHOP SECTION
+   ========================================= */
+#shop {
+  background: #0b0b0b;
+  color: #f5f0e8;
+  padding: 110px 6%;
+  position: relative;
+}
+/* Small editorial label */
+#shop .section-eyebrow {
+  color: #b8a98d;
+  letter-spacing: 0.28em;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+/* Shop heading */
+#shop h2 {
+  color: #f5f0e8;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(42px, 6vw, 72px);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin: 12px 0 55px;
+}
+/* Product grid */
+#shop .product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+/* Product cards */
+#shop .product-card {
+  background: #f5f0e8;
+  border: 1px solid #b8a98d;
+  color: #111;
+  padding: 0 0 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#shop .product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+}
+/* Product image / visual area */
+#shop .product-image {
+  background: #171717;
+  min-height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #b8a98d;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+/* Product text */
+#shop .product-card h3 {
+  color: #111;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1.1;
+  margin: 24px 24px 10px;
+}
+#shop .product-card p {
+  color: #555;
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 0 24px 22px;
+}
+/* Price */
+#shop .product-card .price {
+  color: #111;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  margin: 0 24px 22px;
+}
+/* Add to cart button */
+#shop .product-card button {
+  background: #111;
+  border: 1px solid #111;
+  color: #f5f0e8;
+  cursor: pointer;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  padding: 14px 24px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  margin-left: 24px;
+}
+#shop .product-card button:hover {
+  background: transparent;
+  color: #111;
+}
+/* Mobile */
+@media (max-width: 768px) {
+  #shop {
+    padding: 75px 22px;
+  }
+  #shop .product-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  #shop h2 {
+    font-size: 48px;
+    margin-bottom: 35px;
+  }
+  #shop .product-image {
+    min-height: 220px;
+  }
+}
