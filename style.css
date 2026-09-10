@@ -812,3 +812,128 @@ footer p {
     height: 280px;
   }
 }
+/* =========================================
+   HALYA SOAPS — LUXURY PRODUCT CARDS
+   ========================================= */
+
+#shop {
+  background: #0b0b0b;
+  padding: 100px 6%;
+}
+
+/* Product grid */
+#shop .product-grid {
+  gap: 28px;
+}
+
+/* Cards */
+#shop .product-card {
+  background: #f5f0e8;
+  border: 1px solid #b8a98d;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  padding-bottom: 32px;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+#shop .product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.3);
+}
+
+/* Product images */
+#shop .product-image {
+  height: 340px;
+  background: #171717;
+  overflow: hidden;
+  padding: 0;
+}
+
+#shop .product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+#shop .product-card:hover .product-image img {
+  transform: scale(1.04);
+}
+
+/* Category labels */
+#shop .product-category {
+  color: #9c8b70;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  margin: 26px 28px 0;
+  text-transform: uppercase;
+}
+
+/* Product names */
+#shop .product-card h3 {
+  color: #111;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.1;
+  margin: 12px 28px 12px;
+}
+
+/* Descriptions */
+#shop .product-card p {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 0 28px 24px;
+}
+
+/* Prices */
+#shop .product-card .price {
+  color: #111;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  margin: 0 28px 24px;
+}
+
+/* Buttons */
+#shop .product-card button {
+  background: #111;
+  border: 1px solid #111;
+  color: #f5f0e8;
+  cursor: pointer;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  padding: 15px 26px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  margin-left: 28px;
+}
+
+#shop .product-card button:hover {
+  background: transparent;
+  color: #111;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  #shop {
+    padding: 75px 22px;
+  }
+
+  #shop .product-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  #shop .product-image {
+    height: 300px;
+  }
+
+  #shop .product-card h3 {
+    font-size: 30px;
+  }
+}
