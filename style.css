@@ -937,3 +937,38 @@ footer p {
     font-size: 30px;
   }
 }
+/* =========================================
+   HALYA SOAPS — LUXURY MOBILE MENU
+   ========================================= */
+
+/* Mobile navigation panel */
+@media (max-width: 768px) {
+
+  .site-nav {
+    background: #0b0b0b;
+    border-top: 1px solid #b8a98d;
+    padding: 28px 24px;
+  }
+
+  .site-nav a {
+    color: #f5f0e8;
+    display: block;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 25px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    padding: 16px 0;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(184, 169, 141, 0.25);
+    transition: color 0.3s ease;
+  }
+
+  .site-nav a:hover {
+    color: #b8a98d;
+  }
+
+  .site-nav a:last-child {
+    border-bottom: none;
+  }
+
+}
